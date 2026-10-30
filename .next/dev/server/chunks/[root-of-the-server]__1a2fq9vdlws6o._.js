@@ -244,7 +244,7 @@ module.exports = {
 }),
 "[project]/lib/ragConfig.js [api] (ecmascript)", ((__turbopack_context__, module, exports) => {
 
-const MIN_SIMILARITY = 0.20;
+const MIN_SIMILARITY = 0.65;
 module.exports = {
     MIN_SIMILARITY
 };
@@ -253,17 +253,17 @@ module.exports = {
 
 const db = __turbopack_context__.r("[project]/lib/db.js [api] (ecmascript)");
 async function searchSimilarChunks(queryEmbedding, limit = 5, documentId = null) {
-    // Check that the question embedding is valid
+    // Validate the OpenAI query embedding.
     if (!Array.isArray(queryEmbedding) || queryEmbedding.length !== 1536) {
         throw new Error("Invalid query embedding. Expected 1536 dimensions.");
     }
-    // Convert the embedding array into PostgreSQL vector format
+    // Convert the embedding into PostgreSQL pgvector format.
     const vector = `[${queryEmbedding.join(",")}]`;
-    // Always limit the results to a maximum of 5
+    // Retrieve a maximum of 5 results.
     const searchLimit = Math.min(Math.max(Number(limit) || 5, 1), 5);
     let result;
     if (documentId) {
-        // Search within one specific document
+        // Cosine similarity search within a specific document.
         result = await db.query(`SELECT
           c.id,
           c.document_id,
@@ -271,18 +271,19 @@ async function searchSimilarChunks(queryEmbedding, limit = 5, documentId = null)
           c.content,
           c.start_token,
           c.end_token,
+          c.embedding <=> $1::vector AS cosine_distance,
           1 - (c.embedding <=> $1::vector) AS similarity
        FROM chunks c
        JOIN documents d ON c.document_id = d.id
        WHERE c.document_id = $2
-       ORDER BY c.embedding <=> $1::vector
+       ORDER BY cosine_distance ASC
        LIMIT $3`, [
             vector,
             documentId,
             searchLimit
         ]);
     } else {
-        // Search across all uploaded documents
+        // Cosine similarity search across all uploaded documents.
         result = await db.query(`SELECT
           c.id,
           c.document_id,
@@ -290,10 +291,11 @@ async function searchSimilarChunks(queryEmbedding, limit = 5, documentId = null)
           c.content,
           c.start_token,
           c.end_token,
+          c.embedding <=> $1::vector AS cosine_distance,
           1 - (c.embedding <=> $1::vector) AS similarity
        FROM chunks c
        JOIN documents d ON c.document_id = d.id
-       ORDER BY c.embedding <=> $1::vector
+       ORDER BY cosine_distance ASC
        LIMIT $2`, [
             vector,
             searchLimit
@@ -301,6 +303,7 @@ async function searchSimilarChunks(queryEmbedding, limit = 5, documentId = null)
     }
     return result.rows.map((row)=>({
             ...row,
+            cosine_distance: Number(row.cosine_distance),
             similarity: Number(row.similarity)
         }));
 }
