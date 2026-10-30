@@ -1,0 +1,19 @@
+{
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [],
+  "pages": {
+    "/": [
+      "static/chunks/3lni3vzv-pzll.js",
+      "static/chunks/turbopack-2c3mg3r-05n1w.js"
+    ]
+  },
+  "ampFirstPages": [],
+  "rootMainFilesTree": {},
+  "pagesChunkGroupBootstrapParams": {
+    "/": {"otherChunks":["static/chunks/3lni3vzv-pzll.js"],"runtimeModuleIds":[10783,21899]}
+  },
+  "chunkLoadingGlobal": "TURBOPACK"
+}

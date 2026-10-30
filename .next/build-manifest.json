@@ -1,0 +1,87 @@
+{
+  "pages": {
+    "/": [
+      "static/chunks/3lni3vzv-pzll.js",
+      "static/chunks/turbopack-2c3mg3r-05n1w.js"
+    ],
+    "/_app": [
+      "static/chunks/1accsdpznwhy-.js",
+      "static/chunks/40kjxlf-v2416.js",
+      "static/chunks/14ohf96ww-_0b.js",
+      "static/chunks/turbopack-2c3mg3r-05n1w.js"
+    ],
+    "/_error": [
+      "static/chunks/07vepkrizdb-h.js",
+      "static/chunks/turbopack-2c3mg3r-05n1w.js"
+    ],
+    "/chat/[docId]": [
+      "static/chunks/02m6_h0tkzmg2.js",
+      "static/chunks/0kujft31x95me.js",
+      "static/chunks/turbopack-2c3mg3r-05n1w.js"
+    ],
+    "/documents": [
+      "static/chunks/0a7-e8wsl9omj.js",
+      "static/chunks/turbopack-2c3mg3r-05n1w.js"
+    ]
+  },
+  "devFiles": [],
+  "polyfillFiles": [],
+  "lowPriorityFiles": [
+    "static/GQB1rM0NiXFkpKsAY0XgH/_buildManifest.js",
+    "static/GQB1rM0NiXFkpKsAY0XgH/_ssgManifest.js",
+    "static/GQB1rM0NiXFkpKsAY0XgH/_clientMiddlewareManifest.js"
+  ],
+  "rootMainFiles": [],
+  "rootMainFilesTree": {},
+  "pagesChunkGroupBootstrapParams": {
+    "/documents": {
+      "otherChunks": [
+        "static/chunks/0a7-e8wsl9omj.js"
+      ],
+      "runtimeModuleIds": [
+        10783,
+        80383
+      ]
+    },
+    "/": {
+      "otherChunks": [
+        "static/chunks/3lni3vzv-pzll.js"
+      ],
+      "runtimeModuleIds": [
+        10783,
+        21899
+      ]
+    },
+    "/chat/[docId]": {
+      "otherChunks": [
+        "static/chunks/02m6_h0tkzmg2.js",
+        "static/chunks/0kujft31x95me.js"
+      ],
+      "runtimeModuleIds": [
+        10783,
+        48731
+      ]
+    },
+    "/_app": {
+      "otherChunks": [
+        "static/chunks/1accsdpznwhy-.js",
+        "static/chunks/40kjxlf-v2416.js",
+        "static/chunks/14ohf96ww-_0b.js"
+      ],
+      "runtimeModuleIds": [
+        10783,
+        30984
+      ]
+    },
+    "/_error": {
+      "otherChunks": [
+        "static/chunks/07vepkrizdb-h.js"
+      ],
+      "runtimeModuleIds": [
+        10783,
+        80184
+      ]
+    }
+  },
+  "chunkLoadingGlobal": "TURBOPACK"
+}

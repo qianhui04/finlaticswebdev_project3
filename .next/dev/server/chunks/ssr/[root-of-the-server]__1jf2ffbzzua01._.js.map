@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Acer/finlaticswebdev_project3/pages/documents.js"],"sourcesContent":["import React from \"react\";\r\n\r\nconst DocumentsPage = () => (\r\n  <div>\r\n    <h1>Documents</h1>\r\n    <p>This is a demo documents page.</p>\r\n  </div>\r\n);\r\n\r\nexport default DocumentsPage;\r\n"],"names":["DocumentsPage"],"mappings":";;;;;AAAA;;;AAEA,MAAMA,gBAAgB,kBACpB,qKAAC;;0BACC,qKAAC;0BAAG;;;;;;0BACJ,qKAAC;0BAAE;;;;;;;;;;;;uCAIQA"}}]
+}

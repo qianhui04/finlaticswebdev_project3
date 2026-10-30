@@ -1,0 +1,16 @@
+{
+  "/": "pages/index.html",
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/_error": "pages/_error.js",
+  "/api/auth/[...newAuth]": "pages/api/auth/[...newAuth].js",
+  "/api/chat": "pages/api/chat.js",
+  "/api/chat-stream": "pages/api/chat-stream.js",
+  "/api/documents": "pages/api/documents.js",
+  "/api/process": "pages/api/process.js",
+  "/api/search": "pages/api/search.js",
+  "/api/upload": "pages/api/upload.js",
+  "/chat/[docId]": "pages/chat/[docId].html",
+  "/documents": "pages/documents.html",
+  "/404": "pages/404.html"
+}
